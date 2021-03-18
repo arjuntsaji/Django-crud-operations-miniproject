@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+
+ {% block content %}
+ <table class="table table-borderless">
+      <thead class="border-bottom font-weight-bold">
+      <tr>
+
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Employee Id</th>
+          <th>Email</th>
+          <th>Mobile Number</th>
+          <th>Position</th>
+          <th> Type of Work</th>
+          <th>
+              <a href="{% url 'employee_insert' %}" class="btn btn-outline-success ">
+                  <i class="fa fa-plus d-inline"></i>Add
+              </a>
+
+          </th>
+
+      </tr>
+      </thead>
+      <tbody>
+      {% for production in employee %}
+      <tr>
+
+           <td>{{ production.first_name }}</td>
+           <td>{{ production.last_name }}</td>
+           <td>{{ production.emp_id }}</td>
+           <td>{{ production.email }}</td>
+           <td>{{ production.number }}</td>
+           <td>{{ production.position }}</td>
+           <td>{{production.typeofwork }}</td>
+       {% endfor  %}
+      </tr>
+      </tbody>
+ </table>
+
+
+
+  {% endblock %}

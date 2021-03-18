@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title>employee register</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" >
+   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body >
+    <div class="container-full-bg" >
+        <div class="col-md-10 offset-md-1 mt-5">
+            <div class="jumbotron" >
+
+                    <div class="col-md-4 d-inline">
+                         <a href="{% url 'homepage' %}" >
+               <i  class="fa fa-home btn btn-outline-info" aria-hidden="true" style="font-size:30px;"></i>
+            </a>
+                        <h1 class="display-4 d-flex justify-content-center">Employee Registration</h1>
+
+         </div>
+                    <hr class="my-4">
+                        {% block content %}
+                         {% endblock %}
+            </div>
+
+
+
+        </div>
+    </div>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
