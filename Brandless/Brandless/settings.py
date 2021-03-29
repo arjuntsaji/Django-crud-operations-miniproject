@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from django.contrib import messages
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'crispy_forms',
-    'complaints'
+    'complaints',
+    'login'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -52,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'Brandless.urls'
 
@@ -136,3 +140,7 @@ EMAIL_HOST_PASSWORD='POWERful24'
 # file uploading
 MEDIA_ROOT = os.path.join(BASE_DIR, 'resume/')
 MEDIA_URL = '/resume/'
+
+MESSAGE_TAGS={
+    messages.ERROR:'danger'
+}
