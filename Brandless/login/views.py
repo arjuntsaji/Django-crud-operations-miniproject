@@ -9,6 +9,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
 from .utils import generate_token
 from django.views.generic import View
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -110,3 +111,20 @@ def activate(request, uidb64, token):
         return redirect('token_success')
     else:
         return redirect('token_fail')
+
+
+class PasswordResetView:
+    pass
+
+def validate_username(request):
+    username = request.GET.get("username", None)
+    response = {
+        "is_taken": User.objects.filter(username__iexact=username).exists()
+    }
+    if response['is_taken']:
+        response['error_message'] = 'This username already exit !'
+
+    return JsonResponse(response)
+
+
+
